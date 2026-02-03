@@ -5,7 +5,7 @@ NUM2=1000
 
 SUM=$(($NUM1+$NUM2))
 
-echo " Sum is: $SUM"
+echo "Sum is: $SUM"
 
 # New
 
@@ -14,7 +14,7 @@ NUM2=Hello # It considers letter value as 0
 
 SUM=$(($NUM1+$NUM2))
 
-echo " Sum is: $SUM"
+echo "Sum is: $SUM"
 
 
 # Array --> List of strings which are stored in contiguous memory
