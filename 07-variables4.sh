@@ -28,5 +28,5 @@ echo "PID of this script: $$"
 sleep 100 &
 echo "PID of recently executed background process: $!"
 echo "All variables passed to script: $*"
-echo "Exit status of previous command: $?"
+# echo "Exit status of previous command: $?"
 
