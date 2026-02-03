@@ -2,6 +2,22 @@
 
 ### Special Variables ###
 
+
+# All variables passed to script: $@
+# Number of variables passed to script: $#
+# Script name: $0
+# Present which directory you are in: $PWD
+# Who is running this script: $USER
+# Home directory of the user: $HOME
+# Process Instance ID(PID) of the script: $$
+# sleep 100 &
+# Background process id: $!
+# Exit status of previous command: $?
+
+# $@ treats args separately (In scripts we use this command only)
+# $* treats all args as single args (which will be known in loops)
+
+
 echo "All variables passed to script: $@"
 echo "Number of variables passed to script: $#"
 echo "Script name: $0"
