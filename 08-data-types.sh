@@ -5,4 +5,4 @@ NUM2=1000
 
 SUM=$(($NUM1+$NUM2))
 
-echo " Sum is: $Sum"
+echo " Sum is: $SUM"
