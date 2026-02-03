@@ -13,17 +13,17 @@ NUM=$1
 
 # 1
 
-if [ $NUM -gt 21 ]; then
-    echo "Given number: $NUM is greater than 21"
-fi
+# if [ $NUM -gt 21 ]; then
+#     echo "Given number: $NUM is greater than 21"
+# fi
 
 # 2
 
-if [ $NUM -gt 21 ]; then
-    echo "Given number: $NUM is greater than 21"
-else
-    echo "Given number: $NUM is lesser than 21"
-fi
+# if [ $NUM -gt 21 ]; then
+#     echo "Given number: $NUM is greater than 21"
+# else
+#     echo "Given number: $NUM is lesser than 21"
+# fi
 
 # 3
 
