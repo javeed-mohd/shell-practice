@@ -17,8 +17,9 @@ SUM=$(($NUM1+$NUM2))
 echo " Sum is: $SUM"
 
 
-# Array --> List of strings which are stored in continuous memory
+# Array --> List of strings which are stored in contiguous memory
 
 FRUITS=("Apple" "Banana" "Cherry")
 
+echo "Fruits are: ${FRUITS[@]}"
 
