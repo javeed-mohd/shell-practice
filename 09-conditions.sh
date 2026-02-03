@@ -6,3 +6,9 @@
 # -lt	-> Less than
 # -ge	-> Greater than or equal to
 # -le	-> Less than or equal to
+
+NUM=$1
+
+if [ $NUM -gt 21 ]; then
+    echo "Given number: $NUM is greater than 21"
+fi
