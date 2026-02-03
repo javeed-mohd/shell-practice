@@ -15,4 +15,4 @@ sleep 10
 END_TIME=$(date +%s)
 TOTAL_TIME=$(($END_TIME-$START_TIME)) # one braces is for mathematics and other is for command execution(output) to store in variable
 
-echo "Script executed in: $TOTAL_TIME"
+echo "Script executed in: $TOTAL_TIME seconds"
