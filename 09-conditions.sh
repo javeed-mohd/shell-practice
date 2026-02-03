@@ -7,6 +7,8 @@
 # -ge	-> Greater than or equal to
 # -le	-> Less than or equal to
 
+# Comment as per requirement
+
 NUM=$1
 
 # 1
