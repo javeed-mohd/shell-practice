@@ -14,7 +14,7 @@
 # Exit status of previous command: $?
 
 # $@ treats args separately (In scripts we use this command only)
-# $* treats as single args (which will be known in loops)
+# $* treats all args as single args (which will be known in loops)
 
 echo "All variables passed to script: $@"
 echo "Number of variables passed to script: $#"
@@ -23,7 +23,7 @@ echo "Present directory: $PWD"
 echo "Who is running this script: $USER"
 echo "Home directory of the current user: $HOME"
 echo "PID of this script: $$"
-sleep 100 &
+sleep 10 &
 echo "PID of recently executed background process: $!"
 echo "All variables passed to script: $*"
 # echo "Exit status of previous command: $?"
