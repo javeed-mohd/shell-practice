@@ -27,7 +27,7 @@ VALIDATE $? "Nginx Installation"
 
 echo "Installing MySQL"
 dnf install mysql -y
-VALIDATE $? "MYSQL Installation"
+VALIDATE $? "MySQL Installation"
 
 echo "Installing Nodejs"
 dnf install nodejs -y
