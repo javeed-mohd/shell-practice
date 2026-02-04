@@ -9,4 +9,3 @@ echo "Please enter your password::"
 read -s PASSWORD # Here s hides the data for all for security purpose
 
 # echo "Password is $PASSWORD" # To display the password on the terminal usually we don't prefer this 
-
