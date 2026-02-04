@@ -21,11 +21,14 @@ VALIDATE(){
     
 }
 
+echo "Installing Nginx"
 dnf install nginx -y
-VALIDATE $? "Installing Nginx"
+VALIDATE $? "Nginx Installation"
 
+echo "Installing MySQL"
 dnf install mysql -y
-VALIDATE $? "Installing MYSQL"
+VALIDATE $? "MYSQL Installation"
 
+echo "Installing Nodejs"
 dnf install nodejs -y
-VALIDATE $? "Installing Nodejs"
+VALIDATE $? "Nodejs Installation"
