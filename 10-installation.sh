@@ -7,6 +7,7 @@ if [ $USERID -ne 0 ]; then
     exit 1 # given exit 1 because it will not exit and we know this condition is error so we are giving exit code as other than 0. Because 0 is for success exit status
 fi
 
+
 echo "Installing Nginx"
 dnf install nginx -y
 
