@@ -35,7 +35,7 @@ do
     if [ $? -ne 0 ]; then
         echo "$package not installed, installing now"
         dnf install $package -y &>> $LOGS_FILE
-        # VALIDATE $? "$package installation"
+        # VALIDATE $? "$package installation" # [The purpose of VALIDATE() is that it checks for process and also prints the op in log file]
     else
         echo -e "$package already installed ... $Y SKIPPING $N"
     fi
