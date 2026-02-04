@@ -4,7 +4,7 @@ USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
     echo "Please run this script with root user access"
-    exit 1 # given exit 1 because we know exit code 0 executes
+    exit 1 # given exit 1 because we know exit code 0 is for success
 fi
 
 echo "Installing Nginx"
