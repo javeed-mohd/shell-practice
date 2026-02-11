@@ -50,7 +50,13 @@ log "Source Directory: $SOURCE_DIR"
 log "Destination Directory: $DEST_DIR"
 log "Days: $DAYS"
 
-### To know if files are not available
+
 if [ -z $FILES ]; then
-    log "No Files to archive... $Y SKIPPING $N"
+    log "No Files to archive... $Y SKIPPING $N" # If No files are available to unzip
+else
+    # app-logs-$timestamp.zip
+    log "Files found to archive: $FILES"
+    TIMESTAMP=$(date +%F-%H-%M-%S)
+    ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.tar.gz" # gz --> gun zip is used in linux and .zip is used in windows
+    echo "Archive name: $ZIP_FILE_NAME"
 fi
