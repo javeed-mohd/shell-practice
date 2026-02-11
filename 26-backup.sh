@@ -12,19 +12,19 @@ SOURCE_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14} # Default value is 14 days, if the user does not supply any value
 
+log(){
+    echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
+}
+
 if [ $USERID -ne 0 ]; then
-    echo -e "$R Please run this script with root user access $N" 
+    log -e "$R Please run this script with root user access $N" 
 fi
 
 mkdir -p $LOGS_FOLDER
 
 USAGE(){
-    echo -e "$R USAGE:: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS>[default 14] $N"
+    log -e "$R USAGE:: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS>[default 14] $N"
     exit 1
-}
-
-log(){
-    echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
 }
 
 if [ $# -lt 2 ]; then
@@ -32,12 +32,12 @@ if [ $# -lt 2 ]; then
 fi
 
 if [ ! -d "$SOURCE_DIR" ]; then
-    echo -e "$R Source Directory: $SOURCE_DIR does not exist $N"
+    log -e "$R Source Directory: $SOURCE_DIR does not exist $N"
     exit 1
 fi
 
 if [ ! -d "$DEST_DIR" ]; then
-    echo -e "$R Destination Directory: $DEST_DIR does not exist $N"
+    log -e "$R Destination Directory: $DEST_DIR does not exist $N"
     exit 1
 fi
 
@@ -58,7 +58,7 @@ else
     log "Files found to archive: $FILES"
     TIMESTAMP=$(date +%F-%H-%M-%S)
     ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.tar.gz" # gz --> gun zip is used in linux and .zip is used in windows
-    echo "Archive name: $ZIP_FILE_NAME"
+    log "Archive name: $ZIP_FILE_NAME"
     tar -zcvf $ZIP_FILE_NAME $(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 
     # Check archive is Success or not
@@ -67,9 +67,9 @@ else
 
         while IFS= read -r filepath; do # IFS --> Internal Field Separation(Line by line separation)
             # Process the line here
-            echo "Deleting file: $filepath"
+            log "Deleting file: $filepath"
             rm -f $filepath
-            echo "Deleted file: $filepath"
+            log "Deleted file: $filepath"
         done <<< $FILES
     else
         log "Archiving is... $R FAILURE $N"
