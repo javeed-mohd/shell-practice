@@ -23,7 +23,8 @@ fi
 mkdir -p $LOGS_FOLDER
 
 USAGE(){
-    log -e "$R USAGE:: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS>[default 14] $N"
+    
+    log "$R USAGE:: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS>[default 14] $N"
     exit 1
 }
 
