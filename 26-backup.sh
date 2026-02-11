@@ -59,7 +59,7 @@ else
     TIMESTAMP=$(date +%F-%H-%M-%S)
     ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.tar.gz" # gz --> gun zip is used in linux and .zip is used in windows
     echo "Archive name: $ZIP_FILE_NAME"
-    $FILES | tar -zcvf $ZIP_FILE_NAME
+    ($FILES) tar -zcvf $ZIP_FILE_NAME
 
     # Check archive is Success or not
     if [ -f $ZIP_FILE_NAME ]; then
