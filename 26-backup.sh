@@ -41,7 +41,7 @@ if [ ! -d "$DEST_DIR" ]; then
     exit 1
 fi
 
-### Finding the Files
+### Finding the Files and Unzipping them
 
 FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 
@@ -49,3 +49,8 @@ log "Backup Started"
 log "Source Directory: $SOURCE_DIR"
 log "Destination Directory: $DEST_DIR"
 log "Days: $DAYS"
+
+### To know if files are not available
+if [ -z $FILES ]; then
+    log "No Files to archive... $Y SKIPPING $N)
+fi
