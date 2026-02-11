@@ -52,5 +52,5 @@ log "Days: $DAYS"
 
 ### To know if files are not available
 if [ -z $FILES ]; then
-    log "No Files to archive... $Y SKIPPING $N)
+    log "No Files to archive... $Y SKIPPING $N"
 fi
