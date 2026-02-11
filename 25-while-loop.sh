@@ -12,5 +12,5 @@ count=1
 
 while IFS= read -r LINE; do # IFS --> Internal Field Separation(Line by line separation)
   # Process the line here
-  echo "Line content: $LINE"
+  echo "$LINE"
 done < ./22-script-1.sh # Input which file to read
