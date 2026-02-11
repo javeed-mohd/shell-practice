@@ -59,4 +59,20 @@ else
     TIMESTAMP=$(date +%F-%H-%M-%S)
     ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.tar.gz" # gz --> gun zip is used in linux and .zip is used in windows
     echo "Archive name: $ZIP_FILE_NAME"
+    find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | tar -zcvf $ZIP_FILE_NAME
+
+    # Check archive is Success or not
+    if [ -f $ZIP_FILE_NAME ]; then
+        log "Archiving is... $G SUCCESS $N"
+
+        while IFS= read -r filepath; do # IFS --> Internal Field Separation(Line by line separation)
+            # Process the line here
+            echo "Deleting file: $filepath"
+            rm -f $filepath
+            echo "Deleted file: $filepath"
+        done <<< $FILES
+    else
+        log "Archiving is... $R FAILURE $N"
+        exit 1
+    fi
 fi
