@@ -5,6 +5,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 MESSAGE=""
+IP_ADDRESS=$(curl http://169.254.169.254/latest/meta-data/local-ipv4) # It is used for mail configuration
 
 log(){
     echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
@@ -24,3 +25,5 @@ do
 done <<< $DISK_USAGE
 
 echo -e "$MESSAGE"
+
+sh mail.sh "javeedmohammed2310@gmail.com" "High Disk Alert Usage on $IP_ADDRESS" "$MESSAGE" "HIGH_DISK_USAGE" "$IP_ADDRESS" "DevOps Team" # Mail Config.
